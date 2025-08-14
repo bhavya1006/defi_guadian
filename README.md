@@ -148,11 +148,22 @@ Modify `index.html` to:
 
 ## 🚀 Deployment Options
 
-### GitHub Pages
-1. Push your code to a GitHub repository
-2. Go to Settings → Pages
-3. Select source branch
-4. Your site will be available at `https://username.github.io/repository-name`
+### GitHub Pages (Recommended)
+**This project is ready for GitHub Pages deployment!**
+
+1. **Repository is already set up**: `https://github.com/bhavya1006/defi_guadian`
+2. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Click on **Settings** tab
+   - Scroll down to **Pages** section
+   - Under **Source**, select **Deploy from a branch**
+   - Choose **main** branch and **/ (root)** folder
+   - Click **Save**
+3. **Your site will be live at**: `https://bhavya1006.github.io/defi_guadian/`
+4. **Deployment time**: Usually takes 2-10 minutes for the first deployment
+
+**Live URL**: Once deployed, your DeFiGuard AI app will be accessible at:
+`https://bhavya1006.github.io/defi_guadian/`
 
 ### Netlify
 1. Drag and drop the `defi` folder to [Netlify](https://netlify.com)
