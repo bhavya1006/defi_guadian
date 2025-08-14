@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeFiGuard AI - Liquidity Guardian</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">🛡️ DeFiGuard AI</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('dashboard')" class="active">Dashboard</a></li>
+                <li><a href="#" onclick="showPage('monitoring')">Live Monitoring</a></li>
+                <li><a href="#" onclick="showPage('lp-tracker')">LP Tracker</a></li>
+                <li><a href="#" onclick="showPage('staking')">Staking</a></li>
+                <li><a href="#" onclick="showPage('alerts')">Alerts</a></li>
+                <li><a href="#" onclick="showPage('analytics')">Analytics</a></li>
+                <li><a href="#" onclick="showPage('settings')">Settings</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" onclick="toggleMobileNav()">☰</button>
+            <button class="wallet-connect" onclick="toggleWallet()" id="walletBtn">
+                <span id="walletIcon">🔗</span>
+                <span id="walletText">Connect Wallet</span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Dashboard Page -->
+        <div id="dashboard" class="page active">
+            <div class="container">
+                <section class="hero-section">
+                    <h1 class="hero-title">Liquidity Guardian AI</h1>
+                    <p class="hero-subtitle">
+                        Advanced on-chain intelligence preventing rug pulls and protecting $2.8B+ in DeFi assets
+                        with real-time risk detection and autonomous emergency response systems.
+                    </p>
+                </section>
+
+                <div class="status-grid">
+                    <div class="status-card">
+                        <div class="status-header">
+                            <h3 class="status-title">System Status</h3>
+                            <span class="status-badge status-safe">ACTIVE</span>
+                        </div>
+                        <div class="status-value">99.7%</div>
+                        <p class="status-description">Uptime across all monitoring systems</p>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-header">
+                            <h3 class="status-title">Protected Assets</h3>
+                            <span class="status-badge status-safe">SECURED</span>
+                        </div>
+                        <div class="status-value">$127.3M</div>
+                        <p class="status-description">Total value under protection</p>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-header">
+                            <h3 class="status-title">Risk Level</h3>
+                            <span class="status-badge status-safe">LOW</span>
+                        </div>
+                        <div class="status-value">23/100</div>
+                        <p class="status-description">Current market risk assessment</p>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-header">
+                            <h3 class="status-title">Prevented Losses</h3>
+                            <span class="status-badge status-safe">SUCCESS</span>
+                        </div>
+                        <div class="status-value">$4.2M</div>
+                        <p class="status-description">Saved from potential rug pulls this month</p>
+                    </div>
+                </div>
+
+                <section class="monitoring-section">
+                    <h2 class="section-title">Real-Time Monitoring Dashboard</h2>
+                    <div class="monitoring-grid">
+                        <div class="monitoring-card">
+                            <h3>🔍 Recent Transactions</h3>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">0xa7b2c3d4...f8e9</div>
+                                    <div class="transaction-amount">$45,230 BNB</div>
+                                </div>
+                                <span class="risk-indicator risk-low">LOW</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">0xe8f9a0b1...c2d3</div>
+                                    <div class="transaction-amount">$128,450 CAKE</div>
+                                </div>
+                                <span class="risk-indicator risk-medium">MEDIUM</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">0x1a2b3c4d...5e6f</div>
+                                    <div class="transaction-amount">$87,320 USDT</div>
+                                </div>
+                                <span class="risk-indicator risk-low">LOW</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">0x9z8y7x6w...5v4u</div>
+                                    <div class="transaction-amount">$245,680 BTC</div>
+                                </div>
+                                <span class="risk-indicator risk-high">HIGH</span>
+                            </div>
+                        </div>
+
+                        <div class="monitoring-card">
+                            <h3>🏊 Pool Health Status</h3>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">BNB/USDT Pool</div>
+                                    <div class="transaction-amount">TVL: $23.4M</div>
+                                </div>
+                                <span class="risk-indicator risk-low">STABLE</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">CAKE/BNB Pool</div>
+                                    <div class="transaction-amount">TVL: $18.7M</div>
+                                </div>
+                                <span class="risk-indicator risk-low">STABLE</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">ETH/USDT Pool</div>
+                                    <div class="transaction-amount">TVL: $31.2M</div>
+                                </div>
+                                <span class="risk-indicator risk-medium">WATCH</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">BTCB/USDT Pool</div>
+                                    <div class="transaction-amount">TVL: $45.8M</div>
+                                </div>
+                                <span class="risk-indicator risk-low">STABLE</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- LP Tracker Page -->
+        <div id="lp-tracker" class="page">
+            <div class="container">
+                <section class="hero-section">
+                    <h1 class="hero-title">🔒 LP Token Tracker</h1>
+                    <p class="hero-subtitle">Monitor your liquidity positions, lock status, and yield optimization opportunities</p>
+                </section>
+
+                <div class="yield-optimizer">
+                    <div class="optimizer-title">💡 Yield Optimization Recommendations</div>
+                    <div class="recommendation">
+                        <div class="rec-info">
+                            <div class="rec-protocol">PancakeSwap V3 - BNB/USDT</div>
+                            <div class="rec-apy">APY: 47.2% ↗️</div>
+                        </div>
+                        <span class="network-badge">OpBNB</span>
+                    </div>
+                    <div class="recommendation">
+                        <div class="rec-info">
+                            <div class="rec-protocol">Venus Protocol - vUSDT</div>
+                            <div class="rec-apy">APY: 23.8% ↗️</div>
+                        </div>
+                        <span class="network-badge">BSC</span>
+                    </div>
+                </div>
+
+                <div class="pool-card">
+                    <div class="pool-header">
+                        <div class="pool-pair">
+                            <div class="token-icons">
+                                <div class="token-icon">B</div>
+                                <div class="token-icon">U</div>
+                            </div>
+                            <div>
+                                <div class="pool-name">BNB/USDT LP</div>
+                                <div style="color: #888; font-size: 12px;">PancakeSwap V2</div>
+                            </div>
+                        </div>
+                        <div class="pool-apy">24.7% APY</div>
+                    </div>
+                    
+                    <div class="pool-details">
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Your Position</div>
+                            <div class="pool-stat-value">$12,450</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">LP Tokens</div>
+                            <div class="pool-stat-value">0.0145 LP</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Lock Status</div>
+                            <div class="pool-stat-value"><span class="lock-status unlocked">UNLOCKED</span></div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Pending Rewards</div>
+                            <div class="pool-stat-value">$34.7 CAKE</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary">Harvest Rewards</button>
+                        <button class="btn btn-secondary">Add Liquidity</button>
+                        <button class="btn btn-secondary">Remove</button>
+                    </div>
+                </div>
+
+                <div class="pool-card">
+                    <div class="pool-header">
+                        <div class="pool-pair">
+                            <div class="token-icons">
+                                <div class="token-icon">C</div>
+                                <div class="token-icon">B</div>
+                            </div>
+                            <div>
+                                <div class="pool-name">CAKE/BNB LP</div>
+                                <div style="color: #888; font-size: 12px;">PancakeSwap V3</div>
+                            </div>
+                        </div>
+                        <div class="pool-apy">31.2% APY</div>
+                    </div>
+                    
+                    <div class="pool-details">
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Your Position</div>
+                            <div class="pool-stat-value">$8,230</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">LP Tokens</div>
+                            <div class="pool-stat-value">0.0098 LP</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Lock Status</div>
+                            <div class="pool-stat-value"><span class="lock-status locked">LOCKED 14d</span></div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Pending Rewards</div>
+                            <div class="pool-stat-value">$89.3 CAKE</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary">Harvest Rewards</button>
+                        <button class="btn btn-secondary" disabled>Locked</button>
+                        <button class="btn btn-secondary" disabled>Locked</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Staking Page -->
+        <div id="staking" class="page">
+            <div class="container">
+                <section class="hero-section">
+                    <h1 class="hero-title">💰 Staking Pools</h1>
+                    <p class="hero-subtitle">Stake your tokens for rewards with OpBNB's ultra-low gas fees</p>
+                </section>
+
+                <div class="status-grid">
+                    <div class="status-card">
+                        <div class="status-header">
+                            <h3 class="status-title">Total Staked</h3>
+                            <span class="status-badge status-safe">ACTIVE</span>
+                        </div>
+                        <div class="status-value">$45,670</div>
+                        <p class="status-description">Across all staking pools</p>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-header">
+                            <h3 class="status-title">Pending Rewards</h3>
+                            <span class="status-badge status-warning">HARVESTABLE</span>
+                        </div>
+                        <div class="status-value">$234.50</div>
+                        <p class="status-description">Ready to claim rewards</p>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-header">
+                            <h3 class="status-title">Average APY</h3>
+                            <span class="status-badge status-safe">OPTIMIZED</span>
+                        </div>
+                        <div class="status-value">28.4%</div>
+                        <p class="status-description">Weighted across positions</p>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-header">
+                            <h3 class="status-title">Gas Saved</h3>
+                            <span class="status-badge status-safe">OpBNB</span>
+                        </div>
+                        <div class="status-value">$127.30</div>
+                        <p class="status-description">Using OpBNB low fees</p>
+                    </div>
+                </div>
+
+                <div class="pool-card">
+                    <div class="pool-header">
+                        <div class="pool-pair">
+                            <div class="token-icons">
+                                <div class="token-icon">🥞</div>
+                            </div>
+                            <div>
+                                <div class="pool-name">CAKE Staking Pool</div>
+                                <div style="color: #888; font-size: 12px;">Auto-compound enabled</div>
+                            </div>
+                        </div>
+                        <div class="pool-apy">42.1% APY</div>
+                    </div>
+                    
+                    <div class="pool-details">
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Your Stake</div>
+                            <div class="pool-stat-value">1,245 CAKE</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">USD Value</div>
+                            <div class="pool-stat-value">$3,147</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Rewards Earned</div>
+                            <div class="pool-stat-value">47.3 CAKE</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Lock Period</div>
+                            <div class="pool-stat-value">Flexible</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary">Stake More</button>
+                        <button class="btn btn-secondary">Harvest</button>
+                        <button class="btn btn-secondary">Unstake</button>
+                    </div>
+                </div>
+
+                <div class="pool-card">
+                    <div class="pool-header">
+                        <div class="pool-pair">
+                            <div class="token-icons">
+                                <div class="token-icon">🏆</div>
+                            </div>
+                            <div>
+                                <div class="pool-name">BNB Staking Pool</div>
+                                <div style="color: #888; font-size: 12px;">High APY + Low fees on OpBNB</div>
+                            </div>
+                        </div>
+                        <div class="pool-apy">18.9% APY</div>
+                    </div>
+                    
+                    <div class="pool-details">
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Your Stake</div>
+                            <div class="pool-stat-value">67.4 BNB</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">USD Value</div>
+                            <div class="pool-stat-value">$14,523</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Rewards Earned</div>
+                            <div class="pool-stat-value">2.8 BNB</div>
+                        </div>
+                        <div class="pool-stat">
+                            <div class="pool-stat-label">Lock Period</div>
+                            <div class="pool-stat-value">30 Days</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary">Stake More</button>
+                        <button class="btn btn-secondary">Harvest</button>
+                        <button class="btn btn-secondary" disabled>Locked</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Monitoring Page -->
+        <div id="monitoring" class="page">
+            <div class="container">
+                <section class="hero-section">
+                    <h1 class="hero-title">🐋 Live Monitoring</h1>
+                    <p class="hero-subtitle">Real-time whale alerts and suspicious transaction patterns</p>
+                </section>
+
+                <div class="whale-alert">
+                    <div class="whale-info">
+                        <div>
+                            <div style="color: #ef4444; font-weight: bold; margin-bottom: 5px;">🚨 WHALE ALERT - HIGH RISK</div>
+                            <div style="color: #ffffff;">Large liquidity removal detected in BNB/USDT pool</div>
+                            <div style="color: #888; font-size: 12px;">0xa7b8c9d0...f1e2 | 23 seconds ago</div>
+                        </div>
+                        <div class="whale-amount">$1.2M</div>
+                    </div>
+                </div>
+
+                <div class="monitoring-section">
+                    <div class="monitoring-grid">
+                        <div class="monitoring-card">
+                            <h3>⚡ Live Event Stream</h3>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Transfer Event - 0xa1b2c3d4</div>
+                                    <div class="transaction-amount">$67,890 | 2 sec ago</div>
+                                </div>
+                                <span class="risk-indicator risk-low">SAFE</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">RemoveLiquidity - 0xe5f6a7b8</div>
+                                    <div class="transaction-amount">$234,567 | 5 sec ago</div>
+                                </div>
+                                <span class="risk-indicator risk-high">ALERT</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Withdrawal - 0x9c8b7a6d</div>
+                                    <div class="transaction-amount">$45,123 | 8 sec ago</div>
+                                </div>
+                                <span class="risk-indicator risk-medium">WATCH</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Swap Large - 0x3f4g5h6i</div>
+                                    <div class="transaction-amount">$189,445 | 15 sec ago</div>
+                                </div>
+                                <span class="risk-indicator risk-medium">MONITOR</span>
+                            </div>
+                        </div>
+
+                        <div class="monitoring-card">
+                            <h3>🐋 Whale Activity Tracker</h3>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Whale #1 - 0x1234...abcd</div>
+                                    <div class="transaction-amount">Accumulating +$500K BNB</div>
+                                </div>
+                                <span class="risk-indicator risk-low">BULLISH</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Whale #2 - 0x5678...efgh</div>
+                                    <div class="transaction-amount">Distribution -$1.2M CAKE</div>
+                                </div>
+                                <span class="risk-indicator risk-high">BEARISH</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Whale #3 - 0x9abc...def0</div>
+                                    <div class="transaction-amount">LP Removal -$850K</div>
+                                </div>
+                                <span class="risk-indicator risk-high">CRITICAL</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Whale #4 - 0x4567...8901</div>
+                                    <div class="transaction-amount">Staking +$300K</div>
+                                </div>
+                                <span class="risk-indicator risk-low">STABLE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="monitoring-grid" style="margin-top: 30px;">
+                        <div class="monitoring-card">
+                            <h3>📊 Suspicious Patterns</h3>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Pattern: Coordinated Sells</div>
+                                    <div class="transaction-amount">3 wallets, $2.1M total</div>
+                                </div>
+                                <span class="risk-indicator risk-high">DANGER</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Pattern: Flash Loan Attack</div>
+                                    <div class="transaction-amount">Unusual MEV activity</div>
+                                </div>
+                                <span class="risk-indicator risk-medium">WATCH</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Pattern: Pump & Dump</div>
+                                    <div class="transaction-amount">Volume spike detected</div>
+                                </div>
+                                <span class="risk-indicator risk-high">ALERT</span>
+                            </div>
+                        </div>
+
+                        <div class="monitoring-card">
+                            <h3>⚡ OpBNB Network Stats</h3>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Gas Price</div>
+                                    <div class="transaction-amount">0.001 Gwei (Ultra Low)</div>
+                                </div>
+                                <span class="risk-indicator risk-low">OPTIMAL</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Block Time</div>
+                                    <div class="transaction-amount">~1 second</div>
+                                </div>
+                                <span class="risk-indicator risk-low">FAST</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-hash">Network Load</div>
+                                    <div class="transaction-amount">34% capacity</div>
+                                </div>
+                                <span class="risk-indicator risk-low">HEALTHY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alerts Page -->
+        <div id="alerts" class="page">
+            <div class="container">
+                <section class="hero-section">
+                    <h1 class="hero-title">Alert Center</h1>
+                    <p class="hero-subtitle">Security notifications and system alerts</p>
+                </section>
+
+                <div class="alert-item">
+                    <div class="alert-header">
+                        <div class="alert-title">🚨 Critical Risk Detected</div>
+                        <div class="alert-time">2 minutes ago</div>
+                    </div>
+                    <div class="alert-description">
+                        Large withdrawal detected: $850,000 removed from BNB/USDT pool. Risk Score: 87/100
+                    </div>
+                </div>
+
+                <div class="alert-item">
+                    <div class="alert-header">
+                        <div class="alert-title">⚠️ Whale Movement Alert</div>
+                        <div class="alert-time">15 minutes ago</div>
+                    </div>
+                    <div class="alert-description">
+                        Multiple whale wallets showing coordinated selling activity. Monitor for potential market impact.
+                    </div>
+                </div>
+
+                <div class="alert-item">
+                    <div class="alert-header">
+                        <div class="alert-title">✅ System Status Update</div>
+                        <div class="alert-time">1 hour ago</div>
+                    </div>
+                    <div class="alert-description">
+                        All monitoring systems operational. False positive rate reduced to 8.2%.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Page -->
+        <div id="analytics" class="page">
+            <div class="container">
+                <section class="hero-section">
+                    <h1 class="hero-title">Analytics Dashboard</h1>
+                    <p class="hero-subtitle">Performance metrics and predictive analytics</p>
+                </section>
+
+                <div class="analytics-grid">
+                    <div class="chart-container">
+                        <div class="chart-placeholder">Risk Score Trends (Coming Soon)</div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">Liquidity Flow Analysis (Coming Soon)</div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">Prediction Accuracy (Coming Soon)</div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">Protected Assets Over Time (Coming Soon)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Page -->
+        <div id="settings" class="page">
+            <div class="container">
+                <section class="hero-section">
+                    <h1 class="hero-title">Settings</h1>
+                    <p class="hero-subtitle">Configure your DeFiGuard AI protection parameters</p>
+                </section>
+
+                <div class="settings-section">
+                    <h3>🚨 Alert Settings</h3>
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Emergency Alerts</div>
+                            <div class="setting-description">Receive critical risk alerts via all channels</div>
+                        </div>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                    </div>
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Telegram Notifications</div>
+                            <div class="setting-description">Get alerts through Telegram bot</div>
+                        </div>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🛡️ Protection Settings</h3>
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Auto-Emergency Response</div>
+                            <div class="setting-description">Automatically trigger protective measures</div>
+                        </div>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                    </div>
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Risk Threshold</div>
+                            <div class="setting-description">Current: 80/100 (High sensitivity)</div>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleSwitch(this)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 DeFiGuard AI. Protecting the future of decentralized finance.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
